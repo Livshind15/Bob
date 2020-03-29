@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
 import './environmentPreview.scss';
 import { ReactComponent as ThreeDots } from './threeDots.svg';
 import { ReactComponent as Clock } from './clock.svg';
@@ -21,9 +22,9 @@ const EnvironmentPreview: React.FC = () =>
             </div>
             <div className={'action-container'}>
                 <ThreeDots className={'threeDots'} onClick={()=>{setOpen(!open)}}/>
-                {open && <div className={"action-dropdown"}>
+                 <div className={classnames("action-dropdown",{disappear:!open})}>
                     <ActionDropdown/>
-                    </div>}
+                    </div>
             </div>
         </div>
         <div className={'content-container'}></div>
