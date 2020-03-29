@@ -1,0 +1,92 @@
+.environmentPreview-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .header-container {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    .titles-container {
+      width: 80%;
+      height: 100%;
+      padding: 7%;
+      display: flex;
+      flex-direction: column;
+      .title {
+        color: #aaaaaa;
+        font-size: 1.05em;
+        font-weight: 500;
+      }
+      .metadata-container {
+        display: flex;
+        width: 100%;
+        height: 35%;
+        align-items: center;
+
+        .metadataIcon {
+          width: 10%;
+          height: 40%;
+          padding: 0 2% 0 0;
+          fill: #c9c9c9;
+        }
+        .metadata {
+          color: #c9c9c9;
+          font-size: 0.75em;
+          font-weight: 400;
+        }
+      }
+    }
+    .action-container {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-top: 5%;
+      .action-dropdown {
+        position: absolute;
+        width: 100px;
+        box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .08);
+        background-color: #fdfdfd;
+        height: 115px;
+        top: 17%;
+        left: 48%;
+        right: 0;
+        transition: all 0.5s ease-in;
+        &::before {
+          content: "";
+          width: 0;
+          height: 0;
+          position: absolute;
+          bottom: 100%;
+          right: 9px;
+          
+          border-width: 0 7px 7px 7px;
+          border-style: solid;
+          border-color: #fdfdfd transparent;
+        }
+      }
+      .threeDots {
+        width: 65%;
+        height: 40%;
+        fill: #aaaaaa;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        &:hover {
+          fill: #fcd062;
+        }
+      }
+    }
+  }
+  .content-container {
+    width: 100%;
+    height: 53%;
+  }
+  .footer-container {
+    width: 100%;
+    height: 18%;
+    display: flex;
+    border-top: solid 1px #f4f4f4;
+    box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+  }
+}

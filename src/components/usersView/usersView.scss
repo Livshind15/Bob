@@ -1,0 +1,9 @@
+.usersView-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .user-border:not(:first-child)  {
+        margin-left: -11px;
+    }
+}

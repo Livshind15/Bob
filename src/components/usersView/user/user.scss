@@ -1,0 +1,29 @@
+.user-border{
+    width: calc(1.5em + 2.5px);
+    border-radius: 100%;
+    height: calc(1.4em + 2.5px);
+    display: flex;
+    border: solid 2px white;
+    justify-content: center;
+    align-items: center;
+    .user{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        border: solid 2.5px transparent;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 1000px 1px #fff inset;
+        .user-letter{
+            font-weight: 600;
+            font-size: 19px;
+            text-transform: uppercase;
+            background-clip: text !important;
+            -webkit-background-clip:text !important;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}

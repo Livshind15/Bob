@@ -1,0 +1,14 @@
+.card {
+    width: 13em;
+    height: 15em;
+    display: flex;
+    margin: 2.5% 2.5% 0 0.5em;
+    box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    will-change: transform, box-shadow;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    &:hover{
+        box-shadow:0 10px 40px 0 rgba(62, 57, 107, 0.05), 0 2px 9px 0 rgba(62, 57, 107, 0.04);
+    }
+  }
