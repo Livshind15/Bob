@@ -1,14 +1,16 @@
-import React, { useEffect, useState, FC } from 'react';
+import React, {  FC } from 'react';
 import './user.scss';
 
-interface ColorProps {
-    color: {
-        angle: string,
-        color1: string,
-        percentColorOne: string,
-        color2: string,
-        percentColorTwo: string,
-    },
+export interface ColorType {
+    angle: string,
+    color1: string,
+    percentColorOne: string,
+    color2: string,
+    percentColorTwo: string,
+}
+
+export interface ColorProps {
+    color: ColorType,
 }
 const User: FC<ColorProps> = ({ color }) =>
     <div className={"user-border"}>

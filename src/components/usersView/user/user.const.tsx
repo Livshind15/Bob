@@ -1,4 +1,6 @@
-export const userBordersColors = [
+import { ColorType } from "./user.component";
+
+export const userBordersColors:ColorType[] = [
     {
         angle:'135deg',
         color1:"#FDEB71",
