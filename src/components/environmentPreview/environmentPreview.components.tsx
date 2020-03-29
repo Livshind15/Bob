@@ -3,6 +3,7 @@ import './environmentPreview.scss';
 import { ReactComponent as ThreeDots } from './threeDots.svg';
 import { ReactComponent as Clock } from './clock.svg';
 import UsersView from '../usersView/usersView.component';
+import ActionDropdown from './actionDropdown/actionDropdown.component';
 
 const EnvironmentPreview: React.FC = () =>
 {
@@ -20,7 +21,9 @@ const EnvironmentPreview: React.FC = () =>
             </div>
             <div className={'action-container'}>
                 <ThreeDots className={'threeDots'} onClick={()=>{setOpen(!open)}}/>
-                {open && <div className={"action-dropdown"}></div>}
+                {open && <div className={"action-dropdown"}>
+                    <ActionDropdown/>
+                    </div>}
             </div>
         </div>
         <div className={'content-container'}></div>

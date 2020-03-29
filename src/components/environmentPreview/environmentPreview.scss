@@ -47,11 +47,12 @@
       .action-dropdown {
         position: absolute;
         width: 100px;
-        box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .08);
-        background-color: #fdfdfd;
+        box-shadow: 0 2px 4px 0 rgba(50, 50, 50, .08);
+        background-color: #FAFCFE;
         height: 115px;
         top: 17%;
         left: 48%;
+        border-radius: 0.2em;
         right: 0;
         transition: all 0.5s ease-in;
         &::before {
@@ -61,10 +62,9 @@
           position: absolute;
           bottom: 100%;
           right: 9px;
-          
           border-width: 0 7px 7px 7px;
           border-style: solid;
-          border-color: #fdfdfd transparent;
+          border-color: #FAFCFE transparent;
         }
       }
       .threeDots {
