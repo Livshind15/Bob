@@ -3,7 +3,6 @@ import './usersView.scss';
 import User, { ColorType } from './user/user.component';
 import { userBordersColors } from './user/user.const';
 
-let colors: ColorType[] = userBordersColors.slice();
 
 const getColor = (colors: ColorType[]) => {
     const index = Math.floor(Math.random() * colors.length);
@@ -15,10 +14,11 @@ const getColor = (colors: ColorType[]) => {
 const UsersView = () => {
     const [users, setUsers] = useState<JSX.Element[]>();
     useEffect(() => {
-        const t = [0, 1, 2, 3, 4].map((i) => {
+        let colors: ColorType[] = userBordersColors.slice(); 
+        const avatar = [0, 1, 2, 3, 4].map((i) => {
             return (<User color={getColor(colors)} key={i} />)
         })
-        setUsers(t);
+        setUsers(avatar);
     }, []);
     return (
         <div className={"usersView-container"}>{users}</div>

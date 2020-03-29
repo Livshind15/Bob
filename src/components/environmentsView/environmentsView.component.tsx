@@ -13,7 +13,7 @@ const EnvironmentsView = () =>
             <div className={"view-container"}>
               <Card><AddEnvironment/></Card>
               <Card><EnvironmentPreview/></Card>
-              <Card></Card>
+              <Card><EnvironmentPreview/></Card>
               <Card></Card>
               <Card></Card>
             </div>
