@@ -5,6 +5,7 @@ import { ReactComponent as ThreeDots } from './threeDots.svg';
 import { ReactComponent as Clock } from './clock.svg';
 import UsersView from '../usersView/usersView.component';
 import ActionDropdown from './actionDropdown/actionDropdown.component';
+import MonitorOverview from '../monitorOverview/monitorOverview.component';
 
 const EnvironmentPreview: React.FC = () =>
 {
@@ -27,7 +28,9 @@ const EnvironmentPreview: React.FC = () =>
                     </div>
             </div>
         </div>
-        <div className={'content-container'}></div>
+        <div className={'content-container'}>
+            <MonitorOverview/>
+        </div>
         <div className={'footer-container'}>
             <UsersView/>
         </div>

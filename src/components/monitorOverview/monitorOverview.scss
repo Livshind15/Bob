@@ -1,0 +1,94 @@
+@keyframes fadeIn {
+	0% {
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	1% {
+		display: block;
+		visibility: visible;
+		opacity: 0;
+	}
+
+	100% {
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.monitorOverview-container {
+	width: 98%;
+	height: 98%;
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+	.back-container {
+		height: 30%;
+		transition: all 0.1s ease-in;
+
+		width: 0%;
+		padding-bottom: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.back-button {
+			width: 65%;
+			height: 65%;
+			display: none;
+			visibility: hidden;
+			fill: #aaaaaa;
+			&:hover {
+				fill: #fcd062;
+			}
+		}
+	}
+	.context-container {
+		display: flex;
+		height: 100%;
+		width: 50%;
+	}
+	.next-container {
+		transition: all 0.1s ease-in;
+		height: 30%;
+		width: 0%;
+		padding-bottom: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.next-button {
+			width: 65%;
+			height: 65%;
+			display: none;
+			visibility: hidden;
+			fill: #aaaaaa;
+			&:hover {
+				fill: #fcd062;
+			}
+		}
+	}
+}
+
+.environmentPreview-container {
+	&:hover {
+		.next-container {
+			width: 15%;
+			.next-button {
+				animation: fadeIn 0.4s forwards;
+				transition: all 0.1s ease-in;
+				display: block;
+				visibility: visible;
+			}
+		}
+		.back-container {
+			width: 15%;
+			.back-button {
+				display: block;
+				visibility: visible;
+				animation: fadeIn 0.4s forwards;
+				transition: all 0.1s ease-in;
+			}
+		}
+	}
+}

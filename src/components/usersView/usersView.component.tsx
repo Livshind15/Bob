@@ -4,6 +4,8 @@ import User, { ColorType } from './user/user.component';
 import { userBordersColors } from './user/user.const';
 
 
+const temp = ['a','b','x','v','d','m']
+
 const getColor = (colors: ColorType[]) => {
     const index = Math.floor(Math.random() * colors.length);
     const color = colors[index];
@@ -16,7 +18,7 @@ const UsersView = () => {
     useEffect(() => {
         let colors: ColorType[] = userBordersColors.slice(); 
         const avatar = [0, 1, 2, 3, 4].map((i) => {
-            return (<User color={getColor(colors)} key={i} />)
+            return (<User color={getColor(colors)} key={i} >{temp[Math.floor(Math.random() * temp.length)]}</User>)
         })
         setUsers(avatar);
     }, []);

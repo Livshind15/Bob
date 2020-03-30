@@ -1,8 +1,10 @@
 .card {
     width: 13em;
     height: 15em;
+    
     display: flex;
     margin: 2.5% 2.5% 0 0.5em;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .08);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     will-change: transform, box-shadow;
