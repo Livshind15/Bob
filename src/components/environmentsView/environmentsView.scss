@@ -28,5 +28,13 @@
         flex-wrap: wrap;
         display: flex;
     }
+
+
+  }
+}
+
+@media only screen and (max-device-width: 480px){
+  .view-container {
+    justify-content: center;
   }
 }
