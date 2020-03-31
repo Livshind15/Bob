@@ -1,30 +1,41 @@
-import React, { useState } from 'react';
-import { ReactComponent as Back } from './back.svg';
-import { ReactComponent as Next } from './next.svg';
+import React, { useState, useEffect } from 'react';
+import { ReactComponent as Arrow } from './arrow.svg';
 import './monitorOverview.scss';
-import UpTime from './monitor/uptime/uptime.monitor.component';
-import IncomingTraffic from './monitor/incomingTraffic/incomingTraffic.monitor.component';
+import SwipeableViews, { AxisType } from 'react-swipeable-views';
+import classnames from 'classnames';
+import { virtualize } from 'react-swipeable-views-utils';
+import { mod } from 'react-swipeable-views-core';
+
+const VirtualizeSwipeableViews = virtualize(SwipeableViews);
 
 interface MonitorOverviewProps {
     children?: React.ReactNode,
 }
 
+
+
 const MonitorOverview: React.FC<MonitorOverviewProps> = ({ children }) => {
-    console.log(React.Children.toArray(children));
+    const tabs = React.Children.toArray(children);
+    const tabsLength = React.Children.toArray(children).length;
     const [tab, setTab] = useState(0);
+    const slideRenderer = ({ index, key }) => {
+        return (<div className={'context-container'} key={key}>
+            {tabs[mod(index, tabsLength)]}
+        </div>)
+    }
+
     return (
         <div className={"monitorOverview-container"}>
             <div className={'back-container'}>
-                <Back onClick={() => {
-                    setTab(((tab - 1) * -1) % React.Children.toArray(children).length);
-                }} className={"back-button"} />
+                <Arrow onClick={() =>  setTab(tab - 1)} className={classnames("back-button")} />
             </div>
-            <div className={'context-container'}>
-                {React.Children.toArray(children)[tab]}
+            <VirtualizeSwipeableViews slideRenderer={slideRenderer} className="swipeableViews-container" index={tab} onChangeIndex={ setTab} enableMouseEvents/>
+         
+
+
+            <div className={'next-container'}>
+                <Arrow onClick={() =>  setTab(tab + 1)} className={classnames("next-button")} />
             </div>
-            <div className={'next-container'}><Next onClick={() => {
-                setTab((tab + 1) % React.Children.toArray(children).length);
-            }} className={"next-button"} /></div>
         </div>)
 }
 

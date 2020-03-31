@@ -43,19 +43,16 @@
         opacity: 1;
     }
 }
-.circle {
-    fill: #0396FF;
-}
+
 .arrow {
     animation-duration: 5.5s;
-    fill: #0396FF;
     animation-iteration-count: infinite;
     animation-name: bounce;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .incomingTraffic-container {
-    width: 122%;
+    width: 100%;
     height: 35%;
     display: flex;
     align-items: center;
@@ -78,7 +75,9 @@
             .incomingTraffic-title {
                 color: #a5a5a5;
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 74%;
+                // -webkit-font-smoothing: subpixel-antialiased;
+
                 white-space: nowrap;
             }
         }
@@ -100,4 +99,15 @@
         
     }
 
+}
+.environmentPreview-container {
+	&:hover {
+        .incomingTraffic-title-container{
+            .incomingTraffic-title {
+                font-size: 74%;
+                // -webkit-font-smoothing: antialiased;
+            }
+        }
+       
+    }
 }

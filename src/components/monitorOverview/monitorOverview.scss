@@ -43,13 +43,21 @@
 			}
 		}
 	}
-	.context-container {
-		display: flex;
-		height: 100%;
-		width: 50%;
-		justify-content: center;
-		align-items: center;
+	.swipeableViews-container{
+		width: 100%;
+		.react-swipeable-view-container{
+			will-change: auto !important;
+		}
+		.context-container {
+			display: flex;
+			height: 100%;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+		}
 	}
+	
+
 	.next-container {
 		transition: all 0.1s ease-in;
 		height: 40%;
@@ -63,6 +71,7 @@
 			display: none;
 			visibility: hidden;
 			fill: #aaaaaa;
+			transform: rotate(180deg);
 			&:hover {
 				fill: #fcd062;
 			}
@@ -89,6 +98,9 @@
 				animation: fadeIn 0.4s forwards;
 				transition: all 0.1s ease-in;
 			}
+		}
+		.swipeableViews-container{
+			width: 70%;
 		}
 	}
 }
