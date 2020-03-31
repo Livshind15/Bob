@@ -1,0 +1,103 @@
+@keyframes bounce {
+    0% {
+        transform: translate3d(0, 0px, 0);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+    35% {
+        transform: translate3d(0, 0px, 0);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+    42% {
+       opacity: 0;
+    }
+    50% {
+        transform: translate3d(0, 50px, 0);
+        animation-timing-function: ease-in-out;
+        opacity: 0;
+    }
+    55% {
+        transform: translate3d(0, 50px, 0);
+        animation-timing-function: steps(1);
+        opacity: 0;
+    }
+    60% {
+        transform: translate3d(0, -50px, 0);
+        animation-timing-function: ease-in-out;
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+    }
+
+    70% {
+        transform: translate3d(0, 0px, 0);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+}
+.circle {
+    fill: #0396FF;
+}
+.arrow {
+    animation-duration: 5.5s;
+    fill: #0396FF;
+    animation-iteration-count: infinite;
+    animation-name: bounce;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.incomingTraffic-container {
+    width: 122%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .img {
+            width: 3.5em;
+            height: 3.5em;
+        }
+    }
+    .text-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .incomingTraffic-title-container {
+            .incomingTraffic-title {
+                color: #a5a5a5;
+                font-weight: 400;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+        }
+        .incomingTraffic-value-container {
+            display: flex;
+            align-items: flex-end;
+            .incomingTraffic-value {
+                color: black;
+                font-weight: 500;
+                font-size: 23px;
+            }
+            .incomingTraffic-unit {
+                line-height: 28px;
+                color: black;
+                font-weight: 500;
+                font-size: 14px;
+            }
+        }
+        
+    }
+
+}
