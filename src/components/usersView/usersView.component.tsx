@@ -17,13 +17,16 @@ const UsersView = () => {
     const [users, setUsers] = useState<JSX.Element[]>();
     useEffect(() => {
         let colors: ColorType[] = userBordersColors.slice(); 
-        const avatar = [0, 1, 2, 3, 4].map((i) => {
+        const avatar = [0,1,2,3].map((i) => {
             return (<User color={getColor(colors)} key={i} >{temp[Math.floor(Math.random() * temp.length)]}</User>)
         })
         setUsers(avatar);
     }, []);
     return (
-        <div className={"usersView-container"}>{users}</div>
+        <div className={"usersView-container"}>
+            {users}
+  
+            </div>
     )
 }
 

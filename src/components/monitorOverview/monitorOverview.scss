@@ -20,7 +20,7 @@
 
 .monitorOverview-container {
 	width: 98%;
-	height: 35%;
+	height: 80%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -82,7 +82,7 @@
 .environmentPreview-container {
 	&:hover {
 		.next-container {
-			width: 15%;
+			width: 8%;
 			.next-button {
 				animation: fadeIn 0.4s forwards;
 				transition: all 0.1s ease-in;
@@ -91,7 +91,7 @@
 			}
 		}
 		.back-container {
-			width: 15%;
+			width: 8%;
 			.back-button {
 				display: block;
 				visibility: visible;
@@ -100,7 +100,7 @@
 			}
 		}
 		.swipeableViews-container{
-			width: 70%;
+			width: 82%;
 		}
 	}
 }
