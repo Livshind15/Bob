@@ -21,20 +21,19 @@
       }
     }
     .view-container {
-        width: 100%;
-        overflow: auto;
-        height: 100%;
-        padding-bottom: 2%;
-        flex-wrap: wrap;
-        display: flex;
+      width: 100%;
+      overflow: auto;
+      height: 100%;
+      padding-bottom: 2%;
+      flex-wrap: wrap;
+      display: flex;
     }
-
-
   }
 }
 
-@media only screen and (max-device-width: 480px){
+@media only screen and (max-device-width: 480px) {
   .view-container {
     justify-content: center;
   }
 }
+

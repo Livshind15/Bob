@@ -1,0 +1,18 @@
+{
+    environments{
+        environmentName,
+        environmentDescription
+        creationTime
+        members{
+            userName
+            fullName 
+            avatarUrl
+        }
+        environmentUrl
+        monitor {
+            type 
+            value 
+            unit
+        }
+    } 
+}
