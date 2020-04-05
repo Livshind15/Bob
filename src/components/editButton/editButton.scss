@@ -1,0 +1,85 @@
+  .editButton-container {
+  width: 3em;
+  height: 2em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  .hover {
+    &.wrapper {
+      &:hover {
+        .icon {
+          fill: #fcd062;
+          transition: all 0.1s ease;
+        }
+        .spinner {
+          border-color: #fcd062;
+          transition: all 0.1s ease;
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      width: 0.7em;
+      height: 0.7em;
+      top: 25%;
+      right: 25%;
+      fill: #aaaaaa;
+      position: absolute;
+    }
+    .spinner {
+      top: 0;
+      right: 0;
+      position: relative;
+      display: inline-block;
+      width: 1.3em;
+      height: 1.3em;
+      border: 2px solid #aaaaaa;
+      border-radius: 50%;
+    }
+    .loading {
+      animation: spin 2s infinite linear;
+      &::before,
+      &::after {
+        left: -2px;
+        top: -2px;
+        display: none;
+        position: absolute;
+        content: "";
+        width: inherit;
+        height: inherit;
+        border: inherit;
+        border-radius: inherit;
+      }
+      &,
+      &::before,
+      &::after {
+        display: inline-block;
+        border-color: transparent;
+        border-top-color: #aaaaaa;
+      }
+      &::before {
+        transform: rotate(120deg);
+      }
+      &::after {
+        transform: rotate(240deg);
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
