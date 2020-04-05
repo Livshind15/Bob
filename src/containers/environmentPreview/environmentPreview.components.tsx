@@ -16,6 +16,7 @@ import './environmentPreview.scss';
 const EnvironmentPreview: React.FC = () => {
     const [open, setOpen] = useState(false);
     const [edit, setEdit] = useState(false);
+
     return (
         <div className={'environmentPreview-container'}>
             <div className={'header-container'}>
@@ -33,7 +34,7 @@ const EnvironmentPreview: React.FC = () => {
                 <div className={'action-container'}>
                     <ThreeDots className={'threeDots'} onClick={(): void => setOpen(!open)} />
                     <div className={classnames('action-dropdown', { disappear: !open })}>
-                        <ActionDropdown />
+                        <ActionDropdown onClose={() => setOpen(false)} />
                     </div>
                 </div>
             </div>
