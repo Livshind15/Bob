@@ -34,7 +34,7 @@ const EnvironmentPreview: React.FC = () => {
                 <div className={'action-container'}>
                     <ThreeDots className={'threeDots'} onClick={(): void => setOpen(!open)} />
                     <div className={classnames('action-dropdown', { disappear: !open })}>
-                        <ActionDropdown onClose={() => setOpen(false)} />
+                        <ActionDropdown onClose={(): void => setOpen(false)} />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,72 @@
+[
+    {
+        "environmentName": "Production",
+        "environmentDescription": "סביבת מבצעית",
+        "creationTime": "2019-04-05T23:03:16.197Z",
+        "environmentUrl": "https://cloud.redhat.com/",
+        "members": [
+            {
+                "userName": "daniell",
+                "fullName": "Daniel Livshin",
+                "avatarUrl": "https://lh3.googleusercontent.com/-GFTAOBNjzxw/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJN18ve861f6UJSqhtgfgFbwPvYxQw.CMID/s32-c/photo.jpg"
+            },
+            {
+                "userName": "tonyS",
+                "fullName": "Tony Stark",
+                "avatarUrl": "https://i.pinimg.com/236x/15/7c/f6/157cf6e22a5fd2893a92b07e64070f0e--creative-design-iron-man.jpg"
+            },
+            {
+                "userName": "mikeR",
+                "fullName": "Mike Robinson",
+                "avatarUrl": "https://www.fakepersongenerator.com/Face/male/male20121083482117279.jpg"
+            }
+        ],
+        "monitors": [
+            {
+                "type": "Uptime",
+                "value": "98.2",
+                "unit": "percentage"
+            },
+            {
+                "type": "IncomingTraffic",
+                "value": "512",
+                "unit": "mb"
+            }
+        ]
+    },
+    {
+        "environmentName": "Pre-Prod",
+        "environmentDescription": "סביבת בדיקות",
+        "creationTime": "2020-01-05T23:03:16.197Z",
+        "environmentUrl": "https://cloud.redhat.com/",
+        "members": [
+            {
+                "userName": "daniell",
+                "fullName": "Daniel Livshin",
+                "avatarUrl": "https://lh3.googleusercontent.com/-GFTAOBNjzxw/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJN18ve861f6UJSqhtgfgFbwPvYxQw.CMID/s32-c/photo.jpg"
+            },
+            {
+                "userName": "peterP",
+                "fullName": "Peter Parker",
+                "avatarUrl": "https://avatarfiles.alphacoders.com/180/180144.jpg"
+            },
+            {
+                "userName": "omera",
+                "fullName": "Omer Adam",
+                "avatarUrl": "https://www.acapellas4u.co.uk/wp-content/uploads/2019/04/img_5cb67ab164155.jpg"
+            }
+        ],
+        "monitors": [
+            {
+                "type": "Uptime",
+                "value": "91.2",
+                "unit": "percentage"
+            },
+            {
+                "type": "IncomingTraffic",
+                "value": "666",
+                "unit": "mb"
+            }
+        ]
+    }
+]

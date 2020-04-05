@@ -12,7 +12,6 @@ interface ActionDropdownProps {
 const ActionDropdown: React.FC<ActionDropdownProps> = ({ onClose }: ActionDropdownProps) => {
     const ref = useRef<HTMLDivElement>(null);
     useOnClickOutside(ref, onClose);
-
     return (
         <div ref={ref} className={'actionDropdown-container'}>
             <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
