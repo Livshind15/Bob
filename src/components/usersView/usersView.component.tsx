@@ -4,28 +4,30 @@ import { userBordersColors } from './user/user.const';
 
 import './usersView.scss';
 
-const temp = ['a', 'b', 'x', 'v', 'd', 'm'];
+interface UsersViewProps {
+    members?: {
+        userName: string;
+        fullName: string;
+        avatarUrl: string;
+    }[];
+}
 
-const getColor = (colors: ColorType[]) => {
+const getColor = (colors: ColorType[]): ColorType => {
     const index = Math.floor(Math.random() * colors.length);
     const color = colors[index];
     colors.splice(index, 1);
     return color;
 };
 
-const UsersView = () => {
+const UsersView: React.FC<UsersViewProps> = ({ members }: UsersViewProps) => {
     const [users, setUsers] = useState<JSX.Element[]>();
+
     useEffect(() => {
+        console.log(members);
         const colors: ColorType[] = userBordersColors.slice();
-        const avatar = [0, 1, 2, 3].map((i) => {
-            return (
-                <User color={getColor(colors)} key={i}>
-                    {temp[Math.floor(Math.random() * temp.length)]}
-                </User>
-            );
-        });
+        const avatar = (members || []).map((member, i) => <User color={getColor(colors)} key={i} member={member} />);
         setUsers(avatar);
-    }, []);
+    }, [members]);
     return <div className={'usersView-container'}>{users}</div>;
 };
 

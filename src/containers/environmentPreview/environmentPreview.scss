@@ -1,30 +1,3 @@
-@keyframes fadeIn {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-  1% {
-    display: none;
-    opacity: 0;
-  }
-  100% {
-    display: block;
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    display: block;
-    visibility: visible;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-    visibility: hidden;
-  }
-}
 
 .environmentPreview-container {
   width: 100%;
@@ -69,7 +42,7 @@
         .metadataIcon {
           width: 1em;
           height: 1em;
-          padding: 0 3% 0 0;
+          padding: 0 4% 0 0;
           fill: #c9c9c9;
         }
         .metadata {
@@ -87,45 +60,23 @@
       justify-content: flex-start;
       align-items: flex-start;
       padding: 5%;
-      .action-dropdown {
-        position: absolute;
-        z-index: 2;
-        width: 100px;
-        padding: 2.5% 0 2.5% 0;
-        box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.08);
-        background-color: #fafcfe;
-        height: 115px;
-        top: 15.5%;
-        left: 50%;
-        border-radius: 0.2em;
-        right: 0;
-        transition: all 0.5s ease-in;
-        animation: fadeIn 0.3s ease-out;
-        &.disappear {
-          animation: fadeOut 0.3s forwards;
-          transition: all 0.5s ease-in;
-        }
-        &::before {
-          content: "";
-          width: 0;
-          height: 0;
-          position: absolute;
-          bottom: 100%;
-          right: 16px;
-          border-width: 0 7px 7px 7px;
-          border-style: solid;
-          border-color: #fafcfe transparent;
-        }
-      }
-      .threeDots {
+      .dot-wrapper{
         width: 65%;
         height: 55%;
-        fill: #aaaaaa;
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        &:hover {
-          fill: #fcd062;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .threeDots {
+          width: 100%;
+          height: 100%;
+          fill: #aaaaaa;
+          transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+          &:hover {
+            fill: #fcd062;
+          }
         }
       }
+      
     }
   }
   .content-container {

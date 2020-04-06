@@ -16,15 +16,29 @@ export interface ColorProps {
     children?: React.ReactNode;
 }
 
-const tooltip: React.FC = () => (
+interface UserProps {
+    member: {
+        userName: string;
+        fullName: string;
+        avatarUrl: string;
+    };
+}
+
+const TooltipOverlay: React.FC<UserProps> = ({ member }: UserProps) => (
     <div className={'tooltip-container'}>
-        <img className={'img'} src={avatar} alt="avatar" />
-        <p className={'title'}>Tony Stark</p>
+        <img className={'img'} src={member.avatarUrl} alt="avatar" />
+        <p className={'title'}>{member.fullName}</p>
     </div>
 );
 
-const User: React.FC<ColorProps> = ({ color, children }: ColorProps) => (
-    <Tooltip mouseEnterDelay={0.1} mouseLeaveDelay={0} placement="bottom" trigger={['hover']} overlay={tooltip}>
+const User: React.FC<ColorProps & UserProps> = ({ color, member }: ColorProps & UserProps) => (
+    <Tooltip
+        mouseEnterDelay={0.1}
+        mouseLeaveDelay={0}
+        placement="bottom"
+        trigger={['hover']}
+        overlay={<TooltipOverlay member={member} />}
+    >
         <div className={'user-border'}>
             <div
                 className={'user'}
@@ -38,7 +52,7 @@ const User: React.FC<ColorProps> = ({ color, children }: ColorProps) => (
                         background: `linear-gradient(${color.angle}, ${color.color1} ${color.percentColorOne}, ${color.color2} ${color.percentColorTwo})`,
                     }}
                 >
-                    {children}
+                    {member.fullName[0]}
                 </p>
             </div>
         </div>

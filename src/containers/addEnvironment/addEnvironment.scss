@@ -15,8 +15,8 @@
       justify-content: center;
       align-items: center;
       .plus-symbol {
-        width: 70%;
-        height: 70%;
+        width: 60%;
+        height: 60%;
         fill: #fcd062;
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       }
@@ -29,6 +29,7 @@
         color: #aaaaaa;
         font-size: 1.05em;
         font-weight: 500;
+        white-space: nowrap;
       }
     }
   }

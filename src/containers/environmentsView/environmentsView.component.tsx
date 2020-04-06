@@ -5,24 +5,35 @@ import EnvironmentPreview from '../environmentPreview/environmentPreview.compone
 
 import './environmentsView.scss';
 
-const EnvironmentsView: React.FC = () => (
-    <div className={'environmentsView-container'}>
-        <div className={'content'}>
-            <div className={'title-container'}>
-                <p className={'title'}>Environments Dashboard</p>
-            </div>
-            <div className={'view-container'}>
-                <Card height={'15em'} width={'13em'}>
-                    <AddEnvironment />
-                </Card>
-                <Card height={'15em'} width={'13em'}>
-                    <EnvironmentPreview />
-                </Card>
-                <Card height={'15em'} width={'13em'}>
-                    <EnvironmentPreview />
-                </Card>
+import EnvironmentsMocks from '../../mocks/environments.mocks.json';
+import { Environment } from '../environmentPreview/environment.interface';
+
+const RenderEnvironmentsPreviews = (environments: Environment[]): JSX.Element[] => {
+    return environments.map((environment: Environment, key: number) => {
+        return (
+            <Card key={key} height={'16em'} width={'13em'}>
+                <EnvironmentPreview environment={environment} />
+            </Card>
+        );
+    });
+};
+
+const EnvironmentsView: React.FC = () => {
+    return (
+        <div className={'environmentsView-container'}>
+            <div className={'content'}>
+                <div className={'title-container'}>
+                    <p className={'title'}>Environments Dashboard</p>
+                </div>
+                <div className={'view-container'}>
+                    <Card height={'16em'} width={'13em'}>
+                        <AddEnvironment />
+                    </Card>
+                    {RenderEnvironmentsPreviews(EnvironmentsMocks as Environment[])}
+                </div>
             </div>
         </div>
-    </div>
-);
+    );
+};
+
 export default EnvironmentsView;

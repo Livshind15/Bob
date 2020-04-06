@@ -1,23 +1,42 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
+import classnames from 'classnames';
 import { useOnClickOutside } from '../../../helpers/clickOutside';
 import Action from './action/action.component';
 
 import { ReactComponent as edit } from './action/edit.svg';
 import './actionDropdown.scss';
+import { useEffect } from 'react';
 
 interface ActionDropdownProps {
-    onClose: () => void;
+    toggleEvent?: (toggle) => void;
+    ignoreElementRefs?: React.RefObject<HTMLDivElement>[];
 }
 
-const ActionDropdown: React.FC<ActionDropdownProps> = ({ onClose }: ActionDropdownProps) => {
+const ActionDropdown: React.FC<ActionDropdownProps> = ({ ignoreElementRefs, toggleEvent }: ActionDropdownProps) => {
+    const [actionDropDownClass, setActionDropDownClass] = useState<string>('mount');
+    const toggle = useCallback(() => setActionDropDownClass(actionDropDownClass !== 'open' ? 'open' : 'close'), [
+        actionDropDownClass,
+    ]);
+    useEffect(() => {
+        if (toggleEvent) {
+            toggleEvent(toggle);
+        }
+    }, [actionDropDownClass]);
+
     const ref = useRef<HTMLDivElement>(null);
-    useOnClickOutside(ref, onClose);
+    useOnClickOutside([ref, ...(ignoreElementRefs || [])], () => {
+        if (actionDropDownClass === 'open') {
+            setActionDropDownClass('close');
+        }
+    });
     return (
-        <div ref={ref} className={'actionDropdown-container'}>
-            <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
-            <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
-            <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
-            <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
+        <div ref={ref} className={classnames('action-dropdown', actionDropDownClass)}>
+            <div className={'actionDropdown-container'}>
+                <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
+                <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
+                <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
+                <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
+            </div>
         </div>
     );
 };
