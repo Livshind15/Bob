@@ -32,10 +32,10 @@ const ActionDropdown: React.FC<ActionDropdownProps> = ({ ignoreElementRefs, togg
     return (
         <div ref={ref} className={classnames('action-dropdown', actionDropDownClass)}>
             <div className={'actionDropdown-container'}>
+                <Action title="Open" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
                 <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
-                <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
-                <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
-                <Action title="Edit" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
+                <Action title="Delete" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
+                <Action title="Leave" SvgLogo={edit} onClickCallback={(): void => console.log('')} />
             </div>
         </div>
     );

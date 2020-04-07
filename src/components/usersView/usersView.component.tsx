@@ -23,7 +23,6 @@ const UsersView: React.FC<UsersViewProps> = ({ members }: UsersViewProps) => {
     const [users, setUsers] = useState<JSX.Element[]>();
 
     useEffect(() => {
-        console.log(members);
         const colors: ColorType[] = userBordersColors.slice();
         const avatar = (members || []).map((member, i) => <User color={getColor(colors)} key={i} member={member} />);
         setUsers(avatar);

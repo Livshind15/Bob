@@ -1,6 +1,4 @@
 import React, { useState, useCallback, useRef } from 'react';
-import TimeAgo from 'javascript-time-ago';
-import en from 'javascript-time-ago/locale/en';
 
 import EditButton from '../../components/editButton/editButton.component';
 import IncomingTraffic from '../../components/monitorOverview/monitor/incomingTraffic/incomingTraffic.monitor.component';
@@ -10,10 +8,10 @@ import UsersView from '../../components/usersView/usersView.component';
 import ActionDropdown from './actionDropdown/actionDropdown.component';
 import { Environment } from './environment.interface';
 
-import { ReactComponent as Clock } from './assets/clock.svg';
 import { ReactComponent as ThreeDots } from './assets/threeDots.svg';
 
 import './environmentPreview.scss';
+import Metadata from './metadata/metadata.components';
 
 interface EnvironmentPreviewProps {
     environmentFetch?: (environmentName: string) => Promise<Environment>;
@@ -39,8 +37,6 @@ const environmentFetch = ({
 
 const EnvironmentPreview: React.FC<EnvironmentPreviewProps> = ({ environment, loading }: EnvironmentPreviewProps) => {
     const [edit, setEdit] = useState(false);
-    TimeAgo.addLocale(en);
-    const timeAgo = new TimeAgo('en-US');
     const [toggleDropdown, setToggleDropdown] = useState(() => (): null => null);
     const threeDotsRef = useRef<HTMLDivElement>(null);
 
@@ -54,8 +50,7 @@ const EnvironmentPreview: React.FC<EnvironmentPreviewProps> = ({ environment, lo
                         <input placeholder={environment?.environmentName} className={'title input'} />
                     )}
                     <div className={'metadata-container'}>
-                        <Clock className={'metadataIcon'} />
-                        <p className={'metadata'}>{timeAgo.format(new Date(environment?.creationTime as string))}</p>
+                        <Metadata creationTime={environment?.creationTime || ''} />
                     </div>
                 </div>
                 <div ref={threeDotsRef} className={'action-container'}>
@@ -69,10 +64,13 @@ const EnvironmentPreview: React.FC<EnvironmentPreviewProps> = ({ environment, lo
                 </div>
             </div>
             <div className={'content-container'}>
-                <MonitorOverview>
-                    <IncomingTraffic />
-                    <UpTime />
-                </MonitorOverview>
+                <MonitorOverview
+                    monitors={environment?.monitors || []}
+                    components={[
+                        { type: 'IncomingTraffic', component: IncomingTraffic },
+                        { type: 'Uptime', component: UpTime },
+                    ]}
+                />
                 <div className={'description-container'}>
                     {!edit ? (
                         <p className={'description'}>{environment?.environmentDescription}</p>

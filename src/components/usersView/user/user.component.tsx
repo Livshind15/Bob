@@ -2,7 +2,7 @@ import React from 'react';
 import Tooltip from 'rc-tooltip';
 import './user.scss';
 import './tooltip.scss';
-import avatar from './avatar.jpg';
+
 export interface ColorType {
     angle: string;
     color1: string;

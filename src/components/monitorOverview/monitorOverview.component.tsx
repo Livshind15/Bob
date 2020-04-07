@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { useState } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import { mod } from 'react-swipeable-views-core';
 import { SlideRendererCallback, virtualize } from 'react-swipeable-views-utils';
@@ -11,11 +11,39 @@ const VirtualizeSwipeableViews = virtualize(SwipeableViews);
 
 interface MonitorOverviewProps {
     children?: React.ReactNode;
+    monitors: MonitorsType[];
+    components: ComponentsType[];
 }
 
-const MonitorOverview: React.FC<MonitorOverviewProps> = ({ children }: MonitorOverviewProps) => {
-    const tabs = React.Children.toArray(children);
-    const tabsLength = React.Children.toArray(children).length;
+export interface MonitorsType {
+    type: string;
+    value: string;
+    unit: string;
+}
+
+interface ComponentsType {
+    component: FunctionComponent<{ monitor: MonitorsType }>;
+    type: string;
+}
+
+const RenderChildComponents = (
+    components: ComponentsType[],
+    monitors: MonitorsType[],
+): React.FunctionComponentElement<{ monitor: MonitorsType }>[] => {
+    return components.reduce((componentsArray, component: ComponentsType) => {
+        const monitor = monitors.find((monitor) => monitor.type === component.type);
+        if (monitor) {
+            componentsArray.push(
+                React.createElement<{ monitor: MonitorsType }>(component.component, { monitor: monitor }),
+            );
+        }
+        return componentsArray;
+    }, [] as React.FunctionComponentElement<{ monitor: MonitorsType }>[]);
+};
+
+const MonitorOverview: React.FC<MonitorOverviewProps> = ({ components, monitors }: MonitorOverviewProps) => {
+    const tabs = RenderChildComponents(components, monitors);
+    const tabsLength = tabs.length;
     const [tab, setTab] = useState(0);
     const slideRenderer: SlideRendererCallback = ({ index, key }: { index: number; key: number }) => {
         return (
