@@ -1,0 +1,37 @@
+{
+    environments(environmentName='Pre-Prod'){
+        environmentName,
+        environmentDescription
+        creationTime
+        members{
+            userName
+            fullName 
+            avatarUrl
+        }
+        environmentUrl
+        monitor {
+            type 
+            value 
+            unit
+        }
+    } 
+
+    services{
+       serviceName:string,
+       serviceImage:string,
+       gitUrl:string
+       docker:{
+            imageUrl:string
+            tag:string
+            repository:string
+       }
+       routes:{
+            subUrl:string
+            port:string
+            origin :string
+       }
+       
+    } 
+
+}
+

@@ -1,0 +1,55 @@
+.menu-continuer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    .logo-continuer{
+        width: 100%;
+        height: 12%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logo{
+            width: 60%;
+            height: 60%;
+        }
+    }
+    .options-continuer{
+        width: 100%;
+        height: 88%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .options{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ 
+            &:hover{
+                background-color: rgb(227, 227, 228);
+            }
+            .select{
+                width: 5%;
+                height: 100%;
+                &.selected{
+                    background-color: #f8b84e;
+                    transition: all 0.15s ease-out;
+                }
+            }
+            .content{
+                width: 95%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .options-logo{
+                    width: 45%;
+                    height: 45%;
+                    fill: #7B7B89;
+                }
+            }
+        }
+    }
+}

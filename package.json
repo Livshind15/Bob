@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mrblenny/react-flow-chart": "0.0.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -14,6 +15,8 @@
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.5",
     "@types/react-swipeable-views": "^0.13.0",
+    "@types/styled-components": "^5.0.1",
+    "@types/uuid": "^7.0.2",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "classnames": "^2.2.6",
@@ -33,7 +36,9 @@
     "react-swipeable-views-core": "^0.13.7",
     "react-swipeable-views-utils": "^0.13.9",
     "sass": "^1.26.3",
-    "typescript": "^3.7.5"
+    "styled-components": "^5.1.0",
+    "typescript": "^3.7.5",
+    "uuid": "^7.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

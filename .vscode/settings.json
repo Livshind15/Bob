@@ -1,5 +1,10 @@
 {
-    "cSpell.words": ["boxshadow"],
+    "cSpell.words": [
+        "Microservice",
+        "boxshadow",
+        "draggable",
+        "mrblenny"
+    ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
