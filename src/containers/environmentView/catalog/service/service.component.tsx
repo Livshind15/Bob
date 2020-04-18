@@ -9,7 +9,28 @@ interface ServiceProps {
 
 const Service: React.FC<ServiceProps> = ({ service }: ServiceProps) => {
     return (
-        <div draggable="true" onDragStart={(event) => {}} className={'service-container'}>
+        <div
+            draggable={'true'}
+            onDragStart={(event) => {
+                event.dataTransfer.setData(
+                    REACT_FLOW_CHART,
+                    JSON.stringify({
+                        type: 'service-top',
+                        ports: {
+                            port1: {
+                                id: 'port1',
+                                type: 'bottom',
+                                properties: {},
+                            },
+                        },
+                        properties: {
+                            service: service,
+                        },
+                    }),
+                );
+            }}
+            className={'service-container'}
+        >
             <div className={'img-container'}>
                 <img draggable="false" src={service.serviceImage} className={'img'} alt="service-img"></img>
             </div>

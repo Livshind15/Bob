@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import test from '../../catalog/service/kong_logo.png';
+import { ServiceType } from '../../catalog/catalog.component';
 
 const Inner = styled.div`
     width: 100%;
@@ -26,9 +27,11 @@ const ServiceLabel = styled.p`
 `;
 
 const NodeInner = ({ node, config }: INodeInnerDefaultProps) => {
+    const service = node.properties.service as ServiceType;
+
     return (
         <Inner>
-            <ServiceImg draggable={false} src={test} />
+            <ServiceImg draggable={false} src={service.serviceImage} />
         </Inner>
     );
 };
