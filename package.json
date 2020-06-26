@@ -66,5 +66,12 @@
   },
   "devDependencies": {
     "@types/react-swipeable-views-utils": "^0.13.2"
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/react@1.0.16"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }

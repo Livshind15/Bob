@@ -12,7 +12,7 @@ import ServiceInfo from './serviceInfo/serviceinfo.component';
 import serviceMock from '../../mocks/services.mocks.json';
 
 const EnvironmentView = () => (
-    <div className={'environment-view'}>
+    <div className={'environment-view show-info'}>
         <div className={'menu'}>
             <Menu options={[{ icon: Service }, { icon: Account }, { icon: Settings }]} />
         </div>

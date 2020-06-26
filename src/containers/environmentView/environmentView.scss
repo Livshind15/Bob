@@ -1,33 +1,43 @@
-
-.environment-view{
+.environment-view {
     width: 100%;
     height: 100%;
     display: flex;
-    .menu{
+    .menu {
         height: 100%;
         width: 5%;
         min-width: 10vmin;
         z-index: 3;
-        background-color: #FCFBFE;
+        background-color: #fcfbfe;
     }
-    .catalog{
+    .catalog {
         height: 100%;
-        width: 20%;
+        max-width: 20%;
         z-index: 3;
-        box-shadow: 0 2px 8px 0 rgba(211,223,245, 0.6);
+        box-shadow: 0 2px 8px 0 rgba(211, 223, 245, 0.6);
         background-color: #fdfdfd;
     }
-    .services{
+    .services {
         height: 100%;
-        width: 50%;
+        width: 75%;
         z-index: 1;
-        background-color: #F6F5FA;
+        background-color: #f6f5fa;
+        transition: all 0.08s ease-in-out;
     }
-    .service-info{
+    .service-info {
         height: 100%;
-        width: 25%;
-        box-shadow: 0 2px 8px 0 rgba(211,223,245, 0.6);
+        width: 0%;
+        box-shadow: 0 2px 8px 0 rgba(211, 223, 245, 0.6);
         z-index: 3;
-        background-color: #FCFBFE;
+        background-color: #fcfbfe;
+        transition: all 0.08s ease-in-out;
+    }
+    &.show-info{
+       
+        .service-info{
+            width: 25%;
+        }
+        .services{
+            width:50%;
+        }
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import AddEnvironment from '../addEnvironment/addEnvironment.component';
+import AddEnvironment from '../../components/addEnvironment/addEnvironment.component';
 import Card from '../../components/card/card.component';
 import EnvironmentPreview from '../environmentPreview/environmentPreview.components';
 
